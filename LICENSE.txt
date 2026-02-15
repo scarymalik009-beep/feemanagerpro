@@ -1,0 +1,40 @@
+SCHOOL FEE MANAGER PRO - END USER LICENSE AGREEMENT (EULA)
+
+Copyright © 2026 MWA Software. All rights reserved.
+
+IMPORTANT - READ CAREFULLY: This End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and MWA Software for the School Fee Manager Pro software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("SOFTWARE PRODUCT").
+
+By installing, copying, or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, do not install or use the SOFTWARE PRODUCT.
+
+1. GRANT OF LICENSE
+MWA Software grants you the following rights:
+- Installation and Use: You may install and use the SOFTWARE PRODUCT on a single computer.
+- Backup Copy: You may make one copy of the SOFTWARE PRODUCT for backup or archival purposes.
+
+2. DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS
+- Limitations on Reverse Engineering: You may not reverse engineer, decompile, or disassemble the SOFTWARE PRODUCT.
+- Separation of Components: The SOFTWARE PRODUCT is licensed as a single product and its components may not be separated for use on more than one computer.
+- Rental: You may not rent, lease, or lend the SOFTWARE PRODUCT.
+- Support Services: MWA Software may provide you with support services related to the SOFTWARE PRODUCT.
+
+3. COPYRIGHT
+All title and copyrights in and to the SOFTWARE PRODUCT (including but not limited to any images, photographs, animations, video, audio, music, text, and "applets" incorporated into the SOFTWARE PRODUCT) are owned by MWA Software.
+
+4. LIMITED WARRANTY
+MWA Software warrants that the SOFTWARE PRODUCT will perform substantially in accordance with the accompanying materials for a period of 90 days from the date of receipt.
+
+5. DISCLAIMER OF WARRANTIES
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MWA SOFTWARE DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+6. LIMITATION OF LIABILITY
+IN NO EVENT SHALL MWA SOFTWARE BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE PRODUCT.
+
+7. TERMINATION
+Without prejudice to any other rights, MWA Software may terminate this EULA if you fail to comply with the terms and conditions of this EULA.
+
+8. GOVERNING LAW
+This EULA is governed by the laws of your country of residence.
+
+For questions regarding this EULA, please contact MWA Software.
+
+BY INSTALLING OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.

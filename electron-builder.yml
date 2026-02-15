@@ -1,0 +1,77 @@
+appId: com.mwa.schoolfeemanager
+productName: School Fee Manager Pro
+copyright: Copyright © 2026 MWA Software
+
+directories:
+  buildResources: assets
+  output: release
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+  - node_modules/**/*
+
+# Exclude unnecessary files to reduce installer size
+asarUnpack:
+  - node_modules/sqlite3/**/*
+
+win:
+  target: 
+    - target: nsis
+      arch:
+        - x64
+  icon: assets/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext}
+  requestedExecutionLevel: asInvoker
+  
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: ${productName}
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false
+  displayLanguageSelector: false
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico
+  installerHeader: assets/installer-header.bmp
+  installerHeaderIcon: assets/icon.ico
+  license: LICENSE.txt
+  include: installer-script.nsh
+  warningsAsErrors: false
+  artifactName: ${productName}-Setup-${version}.${ext}
+  
+  # Custom NSIS options
+  perMachine: false
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  menuCategory: true
+  
+  # Installer strings
+  warningsAsErrors: false
+  
+mac:
+  target:
+    - dmg
+    - zip
+  icon: assets/icon.icns
+  category: public.app-category.education
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: assets/entitlements.mac.plist
+  entitlementsInherit: assets/entitlements.mac.plist
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: assets/icon.png
+  category: Office;Education
+  
+publish:
+  provider: generic
+  url: https://your-update-server.com
