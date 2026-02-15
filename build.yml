@@ -1,0 +1,86 @@
+name: Build Installer
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Verify project files
+        run: |
+          Write-Host "=== Checking Project Structure ==="
+          Get-ChildItem -Recurse -Depth 1
+          Write-Host ""
+          Write-Host "=== Checking package.json ==="
+          if (Test-Path package.json) {
+            Write-Host "✅ package.json found"
+            Get-Content package.json
+          } else {
+            Write-Host "❌ package.json NOT found!"
+            exit 1
+          }
+        shell: pwsh
+      
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        env:
+          npm_config_build_from_source: false
+          ELECTRON_BUILDER_CACHE: ${{ github.workspace }}/.cache/electron-builder
+      
+      - name: Build React application
+        run: npm run build
+        env:
+          NODE_ENV: production
+      
+      - name: Build Windows installer
+        run: npm run electron:build:win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ELECTRON_BUILDER_CACHE: ${{ github.workspace }}/.cache/electron-builder
+      
+      - name: List build outputs
+        run: |
+          Write-Host "=== Build Outputs ==="
+          if (Test-Path release) {
+            Get-ChildItem release -Recurse
+          } else {
+            Write-Host "⚠️ No release folder found"
+          }
+        shell: pwsh
+      
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: School-Fee-Manager-Windows-Installer
+          path: |
+            release/*.exe
+            release/*.zip
+          if-no-files-found: warn
+          retention-days: 30
+      
+      - name: Create Release on Tag
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release/*.exe
+            release/*.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
